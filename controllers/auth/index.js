@@ -38,7 +38,7 @@ router.get("/login", (req, res) => {
 router.post("/login", async (req, res) => {
   // FIND USER
   const user = await User.find({ username: req.body.username });
-
+  // TB; rewrite this to use findOne and you get an object not array and don't need line 43 and on 45 just user.password
   //CHECK IF USER WAS FOUND
   if (user.length > 0) {
     // COMPARE PASSWORD

@@ -12,12 +12,22 @@ const router = Router();
 ///////////////////////////////////////
 // ROUTES
 ///////////////////////////////////////
+//INDEX
+
+router.get('/', (req, res) => {
+  res.send('successss');
+});
+
+
+
 
 //TEST ROUTE TO SHOW HOW AUTH MIDDLEWARE WORKS
-
+/*
 router.get("/", auth, (req, res) => {
   res.send("if you see this you are logged in");
 });
+*/
+
 
 ///////////////////////////////////////
 // Export Router

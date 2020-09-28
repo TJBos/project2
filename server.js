@@ -18,7 +18,7 @@ const mongoose = require("./db/dbconn");
 
 // ROUTERS
 const authRouter = require("./controllers/auth");
-const testRouter = require("./controllers/test");
+const testRouter = require("./controllers/world");
 
 // OTHER IMPORTS
 const session = require("express-session");
@@ -59,7 +59,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/auth", authRouter);
-app.use("/test", testRouter);
+app.use("/world", testRouter);
 
 ////////////////////////
 //APP LISTENER
