@@ -27,7 +27,7 @@ router.get('/data', (req, res) => {
 //INDEX
 router.get('/', (req,res) => {
   Country.find({}, (err, country) => {
-      res.render('world/Index.jsx', { country } ); // country is an array of objects, with each object a country
+      res.render('world/index.jsx', { country } ); // country is an array of objects, with each object a country
   });
   
 });
