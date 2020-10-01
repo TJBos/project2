@@ -1,5 +1,7 @@
 // enter your beginning data for the database here
 
+const Country = require('./data_models'); 
+
 const countries = [
     {
         name: "United States",
@@ -9,9 +11,16 @@ const countries = [
         photos: ["img1", "img2", "img3"]
     },
     {
-        
+        name: "France",
+        date: '05/10/2019',
+        places: ["Paris", "Nice", "Marseille"],
+        description: "Visit to the city of lights followed by nice trip along cote d'azur",
+        photos: ["img234", "img456"]
     }
 ];
+
+
+
 
 module.exports = countries;
 

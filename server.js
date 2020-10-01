@@ -16,9 +16,18 @@ const app = express();
 // IMPORT DATABASE CONNECTIONS
 const mongoose = require("./db/dbconn");
 
+//SEED database
+
+/*
+const Country = require('./models/data/data_models.js');
+const countries = require('./models/data/seed.js');
+Country.deleteMany({}, ()=> {});
+Country.insertMany(countries);
+*/
+
 // ROUTERS
 const authRouter = require("./controllers/auth");
-const testRouter = require("./controllers/world");
+const worldRouter = require("./controllers/world");
 
 // OTHER IMPORTS
 const session = require("express-session");
@@ -59,7 +68,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/auth", authRouter);
-app.use("/world", testRouter);
+app.use("/world", worldRouter);
 
 ////////////////////////
 //APP LISTENER
