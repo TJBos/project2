@@ -8,17 +8,16 @@ class Index extends React.Component {
         return (
             <Layout>
                 <div className='index'>
-                    <h1>Countries</h1>
-                    <a href="/world/new"><button>Add a country</button></a>
+                    <a href="/world/new"><button className="btn btn-dark">Add a destination</button></a>
                     <div className='container'>
                         {this.props.country.map((item) => {
                             return (
                                 <div className='card'>
-                                    <a href={`/world/${item.id}`}>
-                                        <img></img>
-                                        <div className='title'>{item.name}</div>
-                                        <div className='title'>{item.description}</div>
-                                    </a>
+                                        <div className='date'>{item.date}</div>
+                                        <div className='img' style={{'background-image': `url(${item.photos[0]})`}} ></div>
+                                        <a href={`/world/${item.id}`}>
+                                            <div className='name'>{item.name}</div>
+                                        </a>
                                 </div>
                             )
                             
