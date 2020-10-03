@@ -7,7 +7,7 @@ class Editphotos extends React.Component {
         const { country } = this.props;
         return (
             <div>
-                <a href='world/addphoto'><button>Add photo</button></a>
+                <a href={`/world/${country._id}/addphoto`}><button>Add photo</button></a>
                 {photos.map((item, index) => {
                             return (
                                 <div>

@@ -86,12 +86,24 @@ router.delete('/:id/:index', auth, (req, res) => {
   Country.findById(req.params.id, (err, country) => {
     country.photos.splice([req.params.index], 1)
     Country.findByIdAndUpdate(req.params.id, country, (err, result) => {
-      res.redirect('/world');
+      res.redirect(`/world/${req.params.id}`);
     })
   })
 })
 
+router.get('/:id/addphoto', auth, (req, res) => {
+  Country.findById(req.params.id, (err, country) => {
+    res.render('world/Addphoto.jsx', { country });
+  })
+})
 
+router.post('/:id', auth, (req, res) => {
+  const newPhoto = req.body.photo
+  Country.findById(req.params.id), (err, country) => {
+    country.photos.push(newPhoto);
+    res.redirect(`/world/${req.params.id}`);
+  }
+})
 
 
 //SHOW
