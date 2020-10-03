@@ -20,6 +20,9 @@ class Show extends React.Component {
                     <div>Places visited: {country.places}</div>
 
                     <h2>Photos</h2>
+                    <form action={`/world/${country._id}/editimg`} method="GET">
+                        <input type="submit" value="edit photos"/>
+                    </form>
                     <div className="img-container">
                         {country.photos.map((photo) => {
                                 return (

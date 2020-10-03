@@ -12,9 +12,7 @@ class Edit extends React.Component {
                     <label>
                         Name <input type="text" defaultValue={country.name} name="name" />
                     </label>
-                    <label>
-                        Img <input type="text" defaultValue={country.photos[0]} name="[photos]" />
-                    </label>
+                    
                     <label>
                         Description <input type="text" defaultValue={country.description} name="description" />
                     </label>

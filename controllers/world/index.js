@@ -54,7 +54,7 @@ router.delete('/:id', auth, (req, res) => {
   });
 });
 
-//EDIT and UPDATE
+//EDIT and UPDATE TEXT INFO
 
 router.get('/:id/edit', auth, (req, res) => {
   Country.findById(req.params.id, (err, country) => {
@@ -65,10 +65,33 @@ router.get('/:id/edit', auth, (req, res) => {
 router.put('/:id', auth, (req, res) => {
 
   req.body.username = req.session.username;
-  Country.findByIdAndUpdate(req.params.id, req.body, (err, result) => {
-      res.redirect('/world');
+  Country.findById(req.params.id, (err, result) => {
+    req.body.photos = result.photos
+    Country.findByIdAndUpdate(result.id, req.body, (err, result) => {
+        res.redirect('/world');
+    });
   });
 });
+
+
+//EDIT and UPDATE PHOTOS
+
+router.get('/:id/editimg', auth, (req, res) => {
+  Country.findById(req.params.id, (err, country) => {
+      res.render('world/Editphotos.jsx', { photos: country.photos, country: country }); //array
+  });
+});
+
+router.delete('/:id/:index', auth, (req, res) => {
+  Country.findById(req.params.id, (err, country) => {
+    country.photos.splice([req.params.index], 1)
+    Country.findByIdAndUpdate(req.params.id, country, (err, result) => {
+      res.redirect('/world');
+    })
+  })
+})
+
+
 
 
 //SHOW
