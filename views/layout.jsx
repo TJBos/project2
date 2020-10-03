@@ -16,6 +16,7 @@ class Layout extends React.Component {
               <a className='nav-link' href="/auth/signup">Sign Up</a>
               <a className='nav-link' href="/auth/login">Log In</a>
               <a className='nav-link' href="/auth/logout">Log Out</a>
+              <a className='nav-link' href="/world">Home</a>
             </nav>
            
             

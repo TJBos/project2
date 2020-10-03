@@ -68,7 +68,7 @@ router.put('/:id', auth, (req, res) => {
   Country.findById(req.params.id, (err, result) => {
     req.body.photos = result.photos
     Country.findByIdAndUpdate(result.id, req.body, (err, result) => {
-        res.redirect('/world');
+        res.redirect(`/world/${req.params.id}`);
     });
   });
 });

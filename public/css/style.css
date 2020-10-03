@@ -17,6 +17,10 @@ img {
     max-width: 400px;
 }
 
+.travelicon {
+    margin-top: 25px;
+}
+
 /* LAYOUT */
 
 .nav-link {
@@ -35,6 +39,7 @@ img {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+
 }
 
 .card {
@@ -45,6 +50,7 @@ img {
     align-items: center;
     background-color: rgb(80,80,80);
     color: white;
+    margin-top: 15px;
 }
 
 .card .img {
@@ -73,4 +79,43 @@ img {
     margin: 20px auto;
     align-items: baseline;
     align-content: space-between;
+}
+
+.show {
+    margin: 10px auto;
+    text-align: center;
+}
+
+.places {
+    color: grey;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-top: 15px;
+}
+
+.show h3 {
+    margin-bottom: 10px;
+}
+
+.description {
+    width: 50%;
+    text-align: center;
+    margin: 10px auto;
+}
+
+.showphoto {
+    margin-top: 10px;
+}
+
+/* EDIT PHOTO */
+
+#addphoto {
+    margin-bottom: 20px;
+}
+
+.edit-photo-ctr {
+    display: flex;
+    justify-content: center;
+    margin: 10px auto;
+    
 }

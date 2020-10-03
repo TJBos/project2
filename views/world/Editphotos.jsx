@@ -6,19 +6,21 @@ class Editphotos extends React.Component {
         const { photos } = this.props;
         const { country } = this.props;
         return (
-            <div>
-                <a href={`/world/${country._id}/addphoto`}><button>Add photo</button></a>
-                {photos.map((item, index) => {
+            <Layout>
+                <div>
+                    <a href={`/world/${country._id}/addphoto`}><button id='addphoto' className='btn btn-default'>Add photo</button></a>
+                    {photos.map((item, index) => {
                             return (
-                                <div>
-                                    <img src={item}></img>
+                                <div className='edit-photo-ctr'>
+                                    <img className='editimg' src={item}></img>
                                     <form action={`/world/${country._id}/${index}?_method=DELETE`} method="POST">
-                                    <input type="submit" value="delete photo" />
+                                    <input className='btn btn-default' type="submit" value="delete photo" />
                                     </form>
                                 </div>
                             )}
-                )}
-            </div>
+                    )}
+                </div>
+            </Layout>
         );
     }
 }

@@ -20,7 +20,7 @@ class New extends React.Component {
                         </div>
                         <div className='form-group'>
                         <label>
-                            Description <input type="text" className='form-control' placeholder="description" name="description" />
+                            Description <input type="textarea" className='form-control' placeholder="description" name="description" />
                         </label>
                         </div>
                         <div className='form-group'>

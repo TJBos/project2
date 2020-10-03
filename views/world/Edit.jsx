@@ -5,28 +5,36 @@ class Edit extends React.Component {
     render() {
         const { country } = this.props;
         return (
-            <div>
-                <h1>Edit Country</h1>
-                <form action={`/world/${country._id}?_method=PUT`} method="POST">
-    
-                    <label>
-                        Name <input type="text" defaultValue={country.name} name="name" />
-                    </label>
-                    
-                    <label>
-                        Description <input type="text" defaultValue={country.description} name="description" />
-                    </label>
-                    <label>
-                        Date <input type="text" defaultValue={country.date} name="date" />
-                    </label>
-                    <label>
-                        Places <input type="text" defaultValue={country.places} name="places" />
-                    </label>
-                    <input type="submit" value="Edit country"></input>
-        
-                </form>
+            <Layout>
+                <div>
+                    <h1>Edit trip details</h1>
+                    <form action={`/world/${country._id}?_method=PUT`} method="POST">
+                    <div className='form-group'>
+                        <label>
+                            Name <input className='form-control' type="text" defaultValue={country.name} name="name" />
+                        </label>
+                    </div>
+                    <div className='form-group'>
+                        <label>
+                            Description <input className='form-control' type="textarea" defaultValue={country.description} name="description" />
+                        </label>
+                    </div>
+                    <div className='form-group'>
+                        <label>
+                            Date <input className='form-control' type="text" defaultValue={country.date} name="date" />
+                        </label>
+                    </div>
+                    <div className='form-group'>
+                        <label>
+                            Places <input className='form-control' type="text" defaultValue={country.places} name="places" />
+                        </label>
+                    </div>
+                        <input className='btn btn-default' type="submit" value="Update"></input>
+            
+                    </form>
 
-            </div>
+                </div>
+            </Layout>
         );
     }
 }
