@@ -30,7 +30,7 @@ class New extends React.Component {
                         </div>
                         <div className='form-group'>
                         <label>
-                            Places visited <input type="text" className='form-control' placeholder="places" name="[places]" />
+                            Places visited <input type="text" className='form-control' placeholder="places" name="places" />
                         </label>
                         </div>
                         <input className="btn btn-default" type="submit" value="Enter country"></input>

@@ -18,12 +18,12 @@ const mongoose = require("./db/dbconn");
 
 //SEED database
 
-/*
+
 const Country = require('./models/data/data_models.js');
 const countries = require('./models/data/seed.js');
 Country.deleteMany({}, ()=> {});
 Country.insertMany(countries);
-*/
+
 
 // ROUTERS
 const authRouter = require("./controllers/auth");

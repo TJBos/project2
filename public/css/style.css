@@ -5,6 +5,7 @@ header {
 
 main {
     text-align: center;
+    margin: 0 auto;
 }
 
 a {
@@ -16,11 +17,20 @@ img {
     max-width: 400px;
 }
 
+/* LAYOUT */
+
+.nav-link {
+    padding: 20px;
+}
+
+
+/* INDEX PAGE */
+
 .index {
     margin-top: 35px;
 }
 
-.container {
+.card-container {
     margin-top: 25px;
     display: flex;
     justify-content: space-around;
@@ -51,4 +61,15 @@ img {
 
 .card .date {
     padding: 10px;
+}
+
+/* SHOW PAGE */
+
+.img-container {
+    width: 75%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 20px auto;
+    align-items: baseline;
 }

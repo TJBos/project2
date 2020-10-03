@@ -5,7 +5,6 @@ class Layout extends React.Component {
     return (
       <html>
         <head>
-          <title>{this.props.title}</title>
           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"></link>
           <link rel="stylesheet" href="/css/style.css"/>
           <script src="/js/app.js"></script>
@@ -13,8 +12,19 @@ class Layout extends React.Component {
         <body>
           <header>
             <h1>Gallivant</h1>
+            
+            
+            <nav className="navbar">
+              <a className="navbar-brand" href="#">TRIP</a>
+              <a className='nav-link' href="/auth/signup">Sign Up</a>
+              <a className='nav-link' href="/auth/login">Log In</a>
+              <a className='nav-link' href="/auth/logout">Log Out</a>
+            </nav>
+           
+            
           </header>
           <main>{this.props.children}</main>
+          
         </body>
       </html>
     );

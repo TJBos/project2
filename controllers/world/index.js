@@ -17,16 +17,16 @@ const router = Router();
 
 //View-database-route
 
-router.get('/data', (req, res) => {
-  Country.find({}, (error, data) => {
+router.get('/data', auth, (req, res) => {
+  Country.find({ username: req.session.username }, (error, data) => {
       res.json(data);
   });
 });
 
 
 //INDEX
-router.get('/', (req,res) => {
-  Country.find({}, (err, country) => {
+router.get('/', auth, (req,res) => {
+  Country.find({ username: req.session.username}, (err, country) => {
       res.render('world/index.jsx', { country } ); // country is an array of objects, with each object a country
   });
   
@@ -34,12 +34,13 @@ router.get('/', (req,res) => {
 
 
 //NEW and CREATE
-router.get('/new', (req, res) => {
+router.get('/new', auth, (req, res) => {
   res.render('world/New.jsx');
 });
 
 
-router.post('/', (req,res) => {
+router.post('/', auth, (req,res) => {
+  req.body.username = req.session.username;
   Country.create(req.body);
   res.redirect('/world');
 });
@@ -47,7 +48,7 @@ router.post('/', (req,res) => {
 
 //DELETE
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', auth, (req, res) => {
   Country.findByIdAndRemove(req.params.id, (err, result) => {
       res.redirect('/world');
   });
@@ -55,13 +56,15 @@ router.delete('/:id', (req, res) => {
 
 //EDIT and UPDATE
 
-router.get('/:id/edit', (req, res) => {
+router.get('/:id/edit', auth, (req, res) => {
   Country.findById(req.params.id, (err, country) => {
       res.render('world/Edit.jsx', { country }) //country is an object
   });
 });
 
-router.put('/:id', (req, res) => {
+router.put('/:id', auth, (req, res) => {
+
+  req.body.username = req.session.username;
   Country.findByIdAndUpdate(req.params.id, req.body, (err, result) => {
       res.redirect('/world');
   });
@@ -70,7 +73,7 @@ router.put('/:id', (req, res) => {
 
 //SHOW
 
-router.get('/:id', (req, res) => {
+router.get('/:id', auth, (req, res) => {
   Country.findById(req.params.id, (err, country) => {
       res.render('world/Show.jsx', { country }) //country is an object
   });

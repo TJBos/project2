@@ -22,7 +22,7 @@ class Edit extends React.Component {
                         Date <input type="text" defaultValue={country.date} name="date" />
                     </label>
                     <label>
-                        Places <input type="text" defaultValue={country.places[0]} name="[places]" />
+                        Places <input type="text" defaultValue={country.places} name="places" />
                     </label>
                     <input type="submit" value="Edit country"></input>
         
