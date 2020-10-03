@@ -4,8 +4,10 @@ const Layout = require("./layout.jsx");
 class Index extends React.Component {
   render() {
     return (
-      <Layout title="The Title!">
-        <h1> {this.props.hello} </h1>
+      <Layout>
+        <h1>Welcome to Gallivant</h1>
+        <h3>Sign up or log in and start building your digital travel diary!</h3>
+        <img src="https://static.vecteezy.com/system/resources/previews/000/129/854/original/vector-free-travel-icons.jpg"></img>
       </Layout>
     );
   }

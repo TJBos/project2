@@ -8,7 +8,7 @@ class Index extends React.Component {
         return (
             <Layout>
                 <div className='index'>
-                    <a href="/world/new"><button className="btn btn-dark">Add a destination</button></a>
+                    <a href="/world/new"><button className="btn btn-dark">Add a trip</button></a>
                     <h2>My Trips</h2>
                     <div className='card-container'>
                         {this.props.country.map((item) => {

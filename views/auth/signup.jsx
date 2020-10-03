@@ -4,11 +4,15 @@ const Layout = require("../layout.jsx");
 class Index extends React.Component {
   render() {
     return (
-      <Layout title="SIGNUP">
+      <Layout>
         <form action="/auth/signup" method="post">
-          <input type="text" name="username" placeholder="username" />
-          <input type="text" name="password" placeholder="password" />
-          <input type="submit" value="signup" />
+          <div className='form-group'>
+          <input className='form-control' type="text" name="username" placeholder="username" />
+          </div>
+          <div className='form-group'>
+          <input className='form-control' type="text" name="password" placeholder="password" />
+          </div>
+          <input className='btn btn-dark' type="submit" value="Sign up" />
         </form>
       </Layout>
     );

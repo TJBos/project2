@@ -9,7 +9,7 @@ const countries = [
         date: "01/10/2018",
         places: "Rome, Firenze, Sienna",
         description: "Amazing trip, visited lots of monuments and ate really good food",
-        photos: ["http://www.travelgrove.com/blog/wp-content/uploads/2011/04/city_rome_italy_19.jpg", "https://www.visitflorence.com/blog/wp-content/uploads/2016/12/campanile-giotto.jpg"]
+        photos: ["http://www.travelgrove.com/blog/wp-content/uploads/2011/04/city_rome_italy_19.jpg", "https://www.visitflorence.com/blog/wp-content/uploads/2016/12/campanile-giotto.jpg", "https://www.prestotours.com/wp-content/uploads/2017/06/shutterstock_577589641.jpg"]
     },
     {   
         username: "toon",

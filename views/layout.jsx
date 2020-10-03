@@ -12,10 +12,7 @@ class Layout extends React.Component {
         <body>
           <header>
             <h1>Gallivant</h1>
-            
-            
             <nav className="navbar">
-              <a className="navbar-brand" href="#">TRIP</a>
               <a className='nav-link' href="/auth/signup">Sign Up</a>
               <a className='nav-link' href="/auth/login">Log In</a>
               <a className='nav-link' href="/auth/logout">Log Out</a>

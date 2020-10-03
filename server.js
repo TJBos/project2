@@ -31,6 +31,7 @@ const worldRouter = require("./controllers/world");
 
 // OTHER IMPORTS
 const session = require("express-session");
+const MongoStore = require("connect-mongo")(session);
 const methodOverride = require("method-override");
 const morgan = require("morgan");
 
@@ -50,21 +51,22 @@ app.use(
   session({
     secret: SECRET,
     resave: false,
-    saveUninitialized: true,
+    saveUninitialized: false,
     cookie: { secure: process.env.NODE_ENV === "production" },
+    store: new MongoStore({ mongooseConnection: mongoose.connection }),
   })
 );
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true })); //comment if not using forms
 app.use(methodOverride("_method"));
-// app.use(express.json()) uncomment if using json
+app.use(express.json())
 app.use(morgan("tiny")); //logging
 
 ///////////////
 //Routes and Routers
 //////////////
 app.get("/", (req, res) => {
-  res.render("index.jsx", { hello: "Hello World" });
+  res.render("index.jsx")
 });
 
 app.use("/auth", authRouter);
